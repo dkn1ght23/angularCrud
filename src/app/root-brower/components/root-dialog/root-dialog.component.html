@@ -1,0 +1,63 @@
+<h2 mat-dialog-title fxLayoutAlign="center">Student Form</h2>
+
+<mat-dialog-content class="mat-typography" fxLayoutAlign="center">
+
+  <form [formGroup]="dialogForm">
+
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="FirstName" placeholder="First name">
+
+      <mat-error>
+        <p *ngIf="dialogForm.controls['FirstName'].hasError('required')">First name required</p>
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="LastName" placeholder="Last name">
+
+      <mat-error>
+        <p *ngIf="dialogForm.controls['LastName'].hasError('required')">Last name required</p>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="Email" placeholder="Email">
+
+      <mat-error>
+        <p *ngIf="dialogForm.controls['Email'].hasError('required')">Email required</p>
+        <p *ngIf="dialogForm.controls['Email'].hasError('email')">Invalid email address</p>
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="PhoneNumber" type="text" placeholder="Phone number">
+
+      <mat-error>
+        <p *ngIf="dialogForm.controls['PhoneNumber'].hasError('required')">Phone number is required</p>
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="PhoneNumber" type="text" placeholder="Department name">
+
+      <mat-error>
+        <p *ngIf="dialogForm.controls['DepartmentName'].hasError('required')">Department name is required</p>
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close class="cancel-btn">Cancel</button>
+  <button mat-raised-button (click)="addStudent()" class="submit-btn">Submit</button>
+</mat-dialog-actions>
