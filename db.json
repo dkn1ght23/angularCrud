@@ -1,0 +1,145 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "+8801731400536",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "department": "CSE"
+    },
+    {
+      "id": 3,
+      "firstName": "Mujammal",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 4,
+      "firstName": "Shawon",
+      "lastName": "Majid",
+      "email": "shawon.majid@gmail.com",
+      "phoneNumber": "01729379229",
+      "department": "swe"
+    },
+    {
+      "id": 5,
+      "firstName": "Akhi",
+      "lastName": "Jannat",
+      "email": "akhi@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "bba"
+    },
+    {
+      "id": 6,
+      "firstName": "Jannat",
+      "lastName": "Akhi",
+      "email": "jannat.akhi@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "bba"
+    },
+    {
+      "id": 7,
+      "firstName": "mujammal.salman@gmail.com",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11,
+      "firstName": "mujammal.salman@gmail.com",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 12,
+      "firstName": "mujammal.salman@gmail.com",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14,
+      "firstName": "asdasd",
+      "lastName": "fdesfsdf",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "ssc"
+    },
+    {
+      "id": 15,
+      "firstName": "asdasd",
+      "lastName": "fdesfsdf",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "ssc"
+    },
+    {
+      "id": 16,
+      "firstName": "arman",
+      "lastName": "chw",
+      "email": "arman.ch@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "class6"
+    },
+    {
+      "id": 17,
+      "firstName": "mujammal",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "cse"
+    },
+    {
+      "id": 18,
+      "firstName": "mujammal",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "abcd"
+    },
+    {
+      "id": 19,
+      "firstName": "salman",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 20,
+      "firstName": "prince",
+      "lastName": "vegeta",
+      "email": "prideofawarrior@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "saiyan"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

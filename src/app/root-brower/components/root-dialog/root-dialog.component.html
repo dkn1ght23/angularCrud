@@ -47,7 +47,7 @@
 
     <mat-form-field>
       <mat-label>Department</mat-label>
-      <input matInput formControlName="PhoneNumber" type="text" placeholder="Department name">
+      <input matInput formControlName="DepartmentName" type="text" placeholder="Department name">
 
       <mat-error>
         <p *ngIf="dialogForm.controls['DepartmentName'].hasError('required')">Department name is required</p>
@@ -58,6 +58,6 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-raised-button mat-dialog-close class="cancel-btn">Cancel</button>
-  <button mat-raised-button (click)="addStudent()" class="submit-btn">Submit</button>
+  <button mat-raised-button mat-dialog-close id="cancel" class="cancel-btn">Cancel</button>
+  <button mat-raised-button (click)="postStudent()" class="submit-btn">Submit</button>
 </mat-dialog-actions>

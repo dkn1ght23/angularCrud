@@ -13,6 +13,8 @@ import { RootDialogComponent } from './components/root-dialog/root-dialog.compon
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatTableModule} from "@angular/material/table";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -21,18 +23,20 @@ import {MatInputModule} from "@angular/material/input";
     RootLandingComponent,
     RootDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    RootBrowserRoutingModule,
-    BrowserAnimationsModule,
-    AppGenericsModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule
-  ],
+    imports: [
+        BrowserModule,
+        RootBrowserRoutingModule,
+        BrowserAnimationsModule,
+        AppGenericsModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatTableModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [
     RootDefaultComponent

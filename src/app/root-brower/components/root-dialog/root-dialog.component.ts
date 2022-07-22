@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {studentModel} from "../../app-core/student.model";
+import {ApiService} from "../../app-core/api.service";
+import {RootLandingComponent} from "../root-landing/root-landing.component";
 
 @Component({
   selector: 'app-root-dialog',
@@ -7,6 +10,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./root-dialog.component.scss']
 })
 export class RootDialogComponent implements OnInit {
+
+  @ViewChild(RootLandingComponent) landingComponent !: RootLandingComponent;
+
+  studentModelObj: studentModel = new studentModel();
 
   dialogForm = new FormGroup({
     Email: new FormControl('', [Validators.email, Validators.required]),
@@ -16,14 +23,30 @@ export class RootDialogComponent implements OnInit {
     DepartmentName: new FormControl('',[Validators.required]),
   })
 
-
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  addStudent(){
-    console.log(this.dialogForm.value);
+
+  postStudent(){
+    this.studentModelObj.firstName = this.dialogForm.value.FirstName;
+    this.studentModelObj.lastName = this.dialogForm.value.LastName;
+    this.studentModelObj.email = this.dialogForm.value.Email;
+    this.studentModelObj.phoneNumber = this.dialogForm.value.PhoneNumber;
+    this.studentModelObj.department = this.dialogForm.value.DepartmentName;
+
+    this.api.postStudent(this.studentModelObj).subscribe(res =>{
+      console.log(res);
+      alert('successful')
+      let ref = document.getElementById('cancel');
+      ref?.click();
+      this.dialogForm.reset();
+      this.landingComponent.getStudent();
+     },err => {
+      alert("something went wrong")
+    })
+
   }
 
 }
