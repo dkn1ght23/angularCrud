@@ -1,0 +1,44 @@
+.wrapper .header-wrapper{
+  min-height: 80px;
+  background-color: deepskyblue;
+  color: #3F3D56;
+}
+
+.wrapper .header-wrapper .header-logo{
+  //border: 1px solid red;
+  padding-left: 5%;
+}
+
+.wrapper .header-wrapper .header-logo .logo{
+  //border: 1px solid black;
+  font-size: 45px;
+}
+
+
+
+/*
+.wrapper .header-wrapper .header-menu{
+  //border: 1px solid red;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.wrapper .header-wrapper .header-menu > ul{
+  //border: 1px solid yellow;
+  font-size: 25px;
+}
+
+.wrapper .header-wrapper .header-menu > ul > li{
+  list-style: none;
+}
+
+.wrapper .header-wrapper .header-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrapper .header-wrapper .header-menu > ul > li a:hover{
+  color: white;
+  border-bottom: 2px solid white;
+}
+*/

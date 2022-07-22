@@ -4,6 +4,7 @@ import { RootBrowserRoutingModule } from './root-browser-routing.module';
 import { RootDefaultComponent } from './components/root-default/root-default.component';
 import {BrowserModule} from "@angular/platform-browser";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppGenericsModule} from "../app-generics/app-generics.module";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     RootBrowserRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppGenericsModule
   ],
   providers: [],
   bootstrap: [
