@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {RootDialogComponent} from "../root-dialog/root-dialog.component";
 import {ApiService} from "../../app-core/api.service";
+import {ShareableService} from "../../app-core/shareable.service";
 
 
 interface Student {
@@ -23,7 +24,9 @@ interface Student {
 export class RootLandingComponent implements OnInit {
 
 
-  constructor(public dialog: MatDialog, private api: ApiService) { }
+  constructor(public dialog: MatDialog,
+              private api: ApiService,
+              private ShareableService: ShareableService) { }
 
   ngOnInit(): void {
     this.getStudent();
@@ -61,6 +64,7 @@ export class RootLandingComponent implements OnInit {
   onEdit(row: any){
     this.loadingId = row.id
     console.log(this.loadingId)
+    this.ShareableService.sendValue(this.loadingId);
   }
 
 }

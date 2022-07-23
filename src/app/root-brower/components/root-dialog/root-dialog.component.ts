@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {studentModel} from "../../app-core/student.model";
 import {ApiService} from "../../app-core/api.service";
 import { RootLandingComponent } from '../root-landing/root-landing.component';
+import {ShareableService} from "../../app-core/shareable.service";
 
 
 @Component({
@@ -10,12 +11,14 @@ import { RootLandingComponent } from '../root-landing/root-landing.component';
   templateUrl: './root-dialog.component.html',
   styleUrls: ['./root-dialog.component.scss']
 })
-export class RootDialogComponent implements OnInit, OnChanges {
+export class RootDialogComponent implements OnInit {
 
   /*@ViewChild(RootLandingComponent) landingComponent !: RootLandingComponent;*/
 
   @Input() dialogID : any;
   finalID !: any;
+
+  rowID !: any;
 
   studentModelObj: studentModel = new studentModel();
 
@@ -27,23 +30,17 @@ export class RootDialogComponent implements OnInit, OnChanges {
     DepartmentName: new FormControl('',[Validators.required]),
   })
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,
+              private ShareableService: ShareableService) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    /*this.idCall();*/
+
+  ngOnInit()  {
+    this.ShareableService.rowValue$
+      .subscribe(res => {
+        this.rowID = res;
+        console.log(this.rowID);
+    })
   }
-
-  ngOnInit(): void {
-    /*this.idCall();*/
-  }
-
-  /*idCall(){
-    if(!this.dialogID){
-      return;
-    }
-    this.finalID = this.dialogID;
-    console.log(this.finalID)
-  }*/
 
   postStudent(){
     this.studentModelObj.firstName = this.dialogForm.value.FirstName;
@@ -66,9 +63,7 @@ export class RootDialogComponent implements OnInit, OnChanges {
   }
 
   updateStudent(){
-    /*this.studentModelObj.id = id;
-    console.log(this.studentModelObj.id);
-    console.log(id);*/
+    console.log(this.rowID);
     this.studentModelObj.firstName = this.dialogForm.value.FirstName;
     this.studentModelObj.lastName = this.dialogForm.value.LastName;
     this.studentModelObj.email = this.dialogForm.value.Email;
