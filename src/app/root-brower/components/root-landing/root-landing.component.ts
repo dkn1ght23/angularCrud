@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {RootDialogComponent} from "../root-dialog/root-dialog.component";
 import {ApiService} from "../../app-core/api.service";
@@ -11,6 +11,7 @@ interface Student {
   email: number;
   phoneNumber: number;
   department: string;
+  action: any;
 }
 
 @Component({
@@ -31,9 +32,10 @@ export class RootLandingComponent implements OnInit {
   studentData !: any;
   finalStudentData : Student[] = this.studentData;
 
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'phoneNumber', 'department'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'phoneNumber', 'department', 'action'];
   dataSource = this.studentData;
 
+  loadingId !: any
 
   openDialog() {
     const dialogRef = this.dialog.open(RootDialogComponent);
@@ -47,6 +49,18 @@ export class RootLandingComponent implements OnInit {
     this.api.getStudent().subscribe(res =>{
       this.studentData = res;
     })
+  }
+
+  deleteStudent(row: any){
+    this.api.deleteStudent(row.id).subscribe((res =>{
+      alert('Student is deleted');
+      this.getStudent();
+    }))
+  }
+
+  onEdit(row: any){
+    this.loadingId = row.id
+    console.log(this.loadingId)
   }
 
 }

@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatTableModule} from "@angular/material/table";
 import {HttpClientModule} from "@angular/common/http";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {HttpClientModule} from "@angular/common/http";
         ReactiveFormsModule,
         MatInputModule,
         MatTableModule,
-        HttpClientModule
+        HttpClientModule,
+        MatIconModule
     ],
   providers: [],
   bootstrap: [
