@@ -1,14 +1,6 @@
 {
   "posts": [
     {
-      "id": 3,
-      "firstName": "Mujammal",
-      "lastName": "Ahmed",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "CSE"
-    },
-    {
       "id": 4,
       "firstName": "Shawon",
       "lastName": "Majid",
@@ -65,14 +57,6 @@
       "department": "CSE"
     },
     {
-      "id": 20,
-      "firstName": "prince",
-      "lastName": "vegeta",
-      "email": "prideofawarrior@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "saiyan"
-    },
-    {
       "id": 21,
       "firstName": "Mujammal",
       "lastName": "Ahmed",
@@ -89,10 +73,34 @@
       "department": "CSE"
     },
     {
-      "id": 23,
+      "id": 24,
+      "firstName": "rahid",
+      "lastName": "hasan",
+      "email": "rahid@GMAIL.COM",
+      "phoneNumber": "+8801731400536",
+      "department": "POW"
+    },
+    {
+      "id": 25,
+      "firstName": "shawon",
+      "lastName": "majid 2.0",
+      "email": "shawon@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "swe"
+    },
+    {
+      "id": 26,
+      "firstName": "Akhi",
+      "lastName": "Akhi",
+      "email": "dxfgd@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "CSE"
+    },
+    {
+      "id": 27,
       "firstName": "Mujammal",
-      "lastName": "Salman",
-      "email": "mujammal.salman@gmail.com",
+      "lastName": "Ahmed",
+      "email": "mujammalrises@gmail.com",
       "phoneNumber": "+8801731400536",
       "department": "CSE"
     }

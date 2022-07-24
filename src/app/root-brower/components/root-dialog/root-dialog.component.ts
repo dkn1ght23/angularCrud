@@ -1,10 +1,8 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild,} from '@angular/core';
+import {Component, OnInit, } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {studentModel} from "../../app-core/student.model";
 import {ApiService} from "../../app-core/api.service";
-import { RootLandingComponent } from '../root-landing/root-landing.component';
 import {ShareableService} from "../../app-core/shareable.service";
-
 
 @Component({
   selector: 'app-root-dialog',
@@ -12,11 +10,6 @@ import {ShareableService} from "../../app-core/shareable.service";
   styleUrls: ['./root-dialog.component.scss']
 })
 export class RootDialogComponent implements OnInit {
-
-  /*@ViewChild(RootLandingComponent) landingComponent !: RootLandingComponent;*/
-
-  @Input() dialogID : any;
-  finalID !: any;
 
   rowID !: any;
 
@@ -31,44 +24,45 @@ export class RootDialogComponent implements OnInit {
   })
 
   constructor(private api: ApiService,
-              private ShareableService: ShareableService) { }
+              private shareService: ShareableService) {
+
+    this.shareService.rowValue$.subscribe(res => {
+      this.rowID = res;
+    })
+    this.shareService.sendDialog(this.dialogForm);
+  }
 
 
   ngOnInit()  {
-    this.ShareableService.rowValue$
-      .subscribe(res => {
-        this.rowID = res;
-        console.log(this.rowID);
-    })
+
   }
 
-  postStudent(){
+
+  setData(){
     this.studentModelObj.firstName = this.dialogForm.value.FirstName;
     this.studentModelObj.lastName = this.dialogForm.value.LastName;
     this.studentModelObj.email = this.dialogForm.value.Email;
     this.studentModelObj.phoneNumber = this.dialogForm.value.PhoneNumber;
     this.studentModelObj.department = this.dialogForm.value.DepartmentName;
+  }
 
-    this.api.postStudent(this.studentModelObj).subscribe(res =>{
+  postStudent(){
+
+    this.setData()
+    this.api.postStudent(this.studentModelObj).subscribe(res => {
       console.log(res);
-      alert('successful')
+      console.log(res);
       let ref = document.getElementById('cancel');
       ref?.click();
       this.dialogForm.reset();
-
-     },err => {
-      alert("something went wrong")
     })
 
   }
 
   updateStudent(){
-    console.log(this.rowID);
-    this.studentModelObj.firstName = this.dialogForm.value.FirstName;
-    this.studentModelObj.lastName = this.dialogForm.value.LastName;
-    this.studentModelObj.email = this.dialogForm.value.Email;
-    this.studentModelObj.phoneNumber = this.dialogForm.value.PhoneNumber;
-    this.studentModelObj.department = this.dialogForm.value.DepartmentName;
+    this.studentModelObj.id = this.rowID;
+    console.log(this.studentModelObj.id)
+    this.setData()
 
     this.api.updateStudent(this.studentModelObj, this.studentModelObj.id).subscribe(res => {
       alert('updated')
@@ -77,10 +71,5 @@ export class RootDialogComponent implements OnInit {
       this.dialogForm.reset();
     })
   }
-
-  /*ngAfterViewInit(): void {
-    console.log('after the call')
-    console.log(this.landingComponent.getStudent())
-  }*/
 
 }
