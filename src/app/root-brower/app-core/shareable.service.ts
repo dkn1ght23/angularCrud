@@ -6,19 +6,18 @@ import { Observable , Subject} from "rxjs";
 })
 export class ShareableService {
 
-  private rowValueSource = new Subject<any>();
-  rowValue$ = this.rowValueSource.asObservable();
-  dialogValue$ = this.rowValueSource.asObservable();
+  public subjectSource = new Subject<any>();
+  public subjectSourceTwo = new Subject<any>();
 
-  constructor() { }
-
-  sendValue(row: any){
-    //console.log(row);
-    this.rowValueSource.next(row);
+  //serial id from edit button
+  rowValue(row: any){
+    this.subjectSource.next(row);
   }
 
-  sendDialog(dialog: any){
-    this.rowValueSource.next(dialog);
+  //dialog form
+  dialogValue(value: any){
+    this.subjectSourceTwo.next(value)
   }
+
 
 }

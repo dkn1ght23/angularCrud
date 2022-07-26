@@ -23,18 +23,16 @@ interface Student {
 
 export class RootLandingComponent implements OnInit {
 
-
   dialogForm !: any;
 
   constructor(public dialog: MatDialog,
               private api: ApiService,
               private shareService: ShareableService) {
 
-    this.shareService.dialogValue$.subscribe(res => {
+    this.shareService.subjectSourceTwo.subscribe(res => {
       this.dialogForm = res;
-      console.log(this.dialogForm)
+      //console.log(this.dialogForm);
     })
-
   }
 
   ngOnInit(): void {
@@ -73,7 +71,13 @@ export class RootLandingComponent implements OnInit {
   onEdit(row: any){
     this.loadingId = row.id
     //console.log(this.loadingId)
-    this.shareService.sendValue(this.loadingId);
+    this.shareService.rowValue(this.loadingId);
+
+    this.dialogForm.controls.FirstName.setValue(row.firstName);
+    this.dialogForm.controls.LastName.setValue(row.lastName);
+    this.dialogForm.controls.Email.setValue(row.email);
+    this.dialogForm.controls.PhoneNumber.setValue(row.phoneNumber);
+    this.dialogForm.controls.DepartmentName.setValue(row.department);
   }
 
 }
