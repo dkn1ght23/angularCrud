@@ -59,8 +59,8 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-raised-button mat-dialog-close id="cancel" class="cancel-btn">Cancel</button>
-  <button mat-raised-button (click)="postStudent()" class="submit-btn">Submit</button>
-  <button mat-raised-button (click)="updateStudent()" class="submit-btn">Update</button>
+  <button mat-raised-button (click)="postStudent()" class="submit-btn" *ngIf="!updateToken">Add</button>
+  <button mat-raised-button (click)="updateStudent()" class="submit-btn" *ngIf="updateToken">Update</button>
 </mat-dialog-actions>
 
 <!--edit function need some work-->

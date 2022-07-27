@@ -12,9 +12,7 @@ import {ShareableService} from "../../app-core/shareable.service";
 export class RootDialogComponent implements OnInit {
 
   rowID !: any;
-  get !: any;
-  showAdd !: boolean;
-  showUpdate !: boolean;
+  updateToken !: boolean;
 
   studentModelObj: studentModel = new studentModel();
 
@@ -31,8 +29,13 @@ export class RootDialogComponent implements OnInit {
 
 
     this.shareService.subjectSource.subscribe(res => {
-      this.rowID =res;
-      console.log(this.rowID);
+      this.rowID = res;
+      //console.log(this.rowID);
+    })
+
+    this.shareService.subjectSourceUpdate.subscribe(res => {
+      this.updateToken = res;
+      //console.log(this.updateToken);
     })
 
     this.shareService.dialogValue(this.dialogForm);
@@ -67,7 +70,7 @@ export class RootDialogComponent implements OnInit {
 
   updateStudent(){
     this.studentModelObj.id = this.rowID;
-    console.log(this.studentModelObj.id)
+    //console.log(this.studentModelObj.id)
     this.setData()
 
     this.api.updateStudent(this.studentModelObj, this.studentModelObj.id).subscribe(res => {

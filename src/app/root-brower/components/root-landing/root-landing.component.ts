@@ -46,6 +46,7 @@ export class RootLandingComponent implements OnInit {
   dataSource = this.studentData;
 
   loadingId !: any
+  updateToken !: boolean;
 
   openDialog() {
     const dialogRef = this.dialog.open(RootDialogComponent);
@@ -69,9 +70,11 @@ export class RootLandingComponent implements OnInit {
   }
 
   onEdit(row: any){
+    this.updateToken = true;
     this.loadingId = row.id
     //console.log(this.loadingId)
     this.shareService.rowValue(this.loadingId);
+    this.shareService.updateValue(this.updateToken);
 
     this.dialogForm.controls.FirstName.setValue(row.firstName);
     this.dialogForm.controls.LastName.setValue(row.lastName);
