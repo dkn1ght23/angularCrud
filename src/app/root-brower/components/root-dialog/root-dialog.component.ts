@@ -1,4 +1,4 @@
-import {Component, OnInit, } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {studentModel} from "../../app-core/student.model";
 import {ApiService} from "../../app-core/api.service";
@@ -27,15 +27,14 @@ export class RootDialogComponent implements OnInit {
   constructor(private api: ApiService,
               private shareService: ShareableService) {
 
+    this.shareService.subjectSourceUpdate.subscribe(res => {
+      this.updateToken = res;
+      console.log(this.updateToken);
+    })
 
     this.shareService.subjectSource.subscribe(res => {
       this.rowID = res;
       //console.log(this.rowID);
-    })
-
-    this.shareService.subjectSourceUpdate.subscribe(res => {
-      this.updateToken = res;
-      //console.log(this.updateToken);
     })
 
     this.shareService.dialogValue(this.dialogForm);
@@ -43,9 +42,7 @@ export class RootDialogComponent implements OnInit {
 
 
   ngOnInit()  {
-
   }
-
 
   setData(){
     //console.log(this.dialogForm.value)

@@ -6,7 +6,7 @@
       "lastName": "Majid",
       "email": "shawon.majid@gmail.com",
       "phoneNumber": "+88017123456",
-      "department": "SWE"
+      "department": "SWE-"
     },
     {
       "id": 5,
@@ -33,38 +33,6 @@
       "department": "class 6"
     },
     {
-      "id": 18,
-      "firstName": "mujammal",
-      "lastName": "Ahmed",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "abcd"
-    },
-    {
-      "id": 19,
-      "firstName": "salman",
-      "lastName": "Ahmed",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "CSE"
-    },
-    {
-      "id": 21,
-      "firstName": "Mujammal",
-      "lastName": "Ahmed",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "Test 1"
-    },
-    {
-      "id": 22,
-      "firstName": "Mujammal",
-      "lastName": "Ahmed",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "CSE"
-    },
-    {
       "id": 24,
       "firstName": "rahid",
       "lastName": "hasan",
@@ -79,14 +47,6 @@
       "email": "shawon@gmail.com",
       "phoneNumber": "+8801731400536",
       "department": "swe"
-    },
-    {
-      "id": 26,
-      "firstName": "Akhi",
-      "lastName": "Akhi",
-      "email": "dxfgd@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "CSE"
     },
     {
       "id": 27,
@@ -105,20 +65,12 @@
       "department": "cse"
     },
     {
-      "id": 29,
-      "firstName": "Mujammal",
-      "lastName": "123456",
-      "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+8801731400536",
-      "department": "CSE"
-    },
-    {
       "id": 30,
-      "firstName": "Muja",
-      "lastName": "Salman",
-      "email": "mujam@gmail.com",
-      "phoneNumber": "123465",
-      "department": "cse"
+      "firstName": "Mujammal",
+      "lastName": "Ahmed",
+      "email": "mujammal.salman@gmail.com",
+      "phoneNumber": "+880191567184",
+      "department": "CSE"
     }
   ],
   "comments": [],

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {RootDialogComponent} from "../root-dialog/root-dialog.component";
 import {ApiService} from "../../app-core/api.service";
@@ -21,7 +21,7 @@ interface Student {
   styleUrls: ['./root-landing.component.scss']
 })
 
-export class RootLandingComponent implements OnInit {
+export class RootLandingComponent implements OnInit  {
 
   dialogForm !: any;
 
@@ -29,15 +29,18 @@ export class RootLandingComponent implements OnInit {
               private api: ApiService,
               private shareService: ShareableService) {
 
+  }
+
+  ngOnInit(): void {
+    this.getStudent();
     this.shareService.subjectSourceTwo.subscribe(res => {
       this.dialogForm = res;
       //console.log(this.dialogForm);
     })
   }
 
-  ngOnInit(): void {
-    this.getStudent();
-  }
+
+
 
   studentData !: any;
   finalStudentData : Student[] = this.studentData;
