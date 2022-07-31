@@ -62,7 +62,6 @@ export class RootDialogComponent implements OnInit {
       ref?.click();
       this.dialogForm.reset();
     })
-
   }
 
   updateStudent(){

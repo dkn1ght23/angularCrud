@@ -36,7 +36,7 @@ export class RootLandingComponent implements OnInit  {
     this.shareService.subjectSourceTwo.subscribe(res => {
       this.dialogForm = res;
       //console.log(this.dialogForm);
-    })
+    });
   }
 
 
