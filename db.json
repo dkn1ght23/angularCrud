@@ -65,12 +65,20 @@
       "department": "cse"
     },
     {
-      "id": 30,
-      "firstName": "Mujammal",
+      "id": 31,
+      "firstName": "Shakib",
+      "lastName": "Riki",
+      "email": "riki@gmail.com",
+      "phoneNumber": "+8801731400536",
+      "department": "LU: CSE"
+    },
+    {
+      "id": 32,
+      "firstName": "mujammal",
       "lastName": "Ahmed",
       "email": "mujammal.salman@gmail.com",
-      "phoneNumber": "+880191567184",
-      "department": "CSE"
+      "phoneNumber": "+8801731400536",
+      "department": "cse"
     }
   ],
   "comments": [],

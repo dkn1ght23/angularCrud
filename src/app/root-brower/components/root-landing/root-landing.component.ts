@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {RootDialogComponent} from "../root-dialog/root-dialog.component";
 import {ApiService} from "../../app-core/api.service";
@@ -21,9 +21,10 @@ interface Student {
   styleUrls: ['./root-landing.component.scss']
 })
 
-export class RootLandingComponent implements OnInit  {
+export class RootLandingComponent implements OnInit, OnDestroy {
 
   dialogForm !: any;
+  subscription: any;
 
   constructor(public dialog: MatDialog,
               private api: ApiService,
@@ -33,14 +34,23 @@ export class RootLandingComponent implements OnInit  {
 
   ngOnInit(): void {
     this.getStudent();
+
     this.shareService.subjectSourceTwo.subscribe(res => {
       this.dialogForm = res;
       //console.log(this.dialogForm);
     });
+
+    //function call
+    this.subscription = this.shareService.functionCallSubject.subscribe((event) => {
+      this.getStudent();
+    });
   }
 
-
-
+  ngOnDestroy(){
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
+  }
 
   studentData !: any;
   finalStudentData : Student[] = this.studentData;

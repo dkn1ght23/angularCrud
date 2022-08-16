@@ -11,6 +11,7 @@ import {ShareableService} from "../../app-core/shareable.service";
 })
 export class RootDialogComponent implements OnInit {
 
+
   rowID !: any;
   updateToken !: boolean;
 
@@ -42,6 +43,7 @@ export class RootDialogComponent implements OnInit {
 
 
   ngOnInit()  {
+
   }
 
   setData(){
@@ -61,7 +63,9 @@ export class RootDialogComponent implements OnInit {
       let ref = document.getElementById('cancel');
       ref?.click();
       this.dialogForm.reset();
+      this.shareService.functionCalled();
     })
+
   }
 
   updateStudent(){
@@ -74,6 +78,7 @@ export class RootDialogComponent implements OnInit {
       let ref = document.getElementById('cancel');
       ref?.click();
       this.dialogForm.reset();
+      this.shareService.functionCalled();
     })
   }
 

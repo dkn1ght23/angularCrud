@@ -10,6 +10,14 @@ export class ShareableService {
   public subjectSourceTwo = new Subject<any>();
   public subjectSourceUpdate = new Subject<any>();
 
+
+  //for calling function
+  public functionCallSubject = new Subject<any>();
+
+  functionCalled(){
+    this.functionCallSubject.next(null);
+  }
+
   //update button boolean value
   updateValue(token: boolean){
     this.subjectSourceUpdate.next(token);
